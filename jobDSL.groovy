@@ -8,12 +8,12 @@ pipeline {
             post{
                 success {
                     echo "Now Archiving .."
-                    archiveArtifacts artifacts:'**/*.war'
+                    archiveArtifacts artifacts:'**/*.jar'
                 }
             }
         }
 
-        stage('Create Tomcat DOCKER image'){
+        stage('Create  DOCKER image'){
             steps {
                 sh "pwd"
                 sh "ls -a"
