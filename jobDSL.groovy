@@ -1,4 +1,4 @@
-pipeline {
+pipeline(MainStream) {
     agent any
     stages {
         stage('Build Application') {
