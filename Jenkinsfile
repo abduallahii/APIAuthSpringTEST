@@ -13,11 +13,19 @@ pipeline {
             }
         }
 
-        stage('Create Tomcat Docker Image'){
+        stage('Create Spring Docker Image'){
             steps {
                 sh "pwd"
                 sh "ls -a"
                 sh "docker build . -t dockerapp:${env.BUILD_ID}"
+            }
+        }
+        
+        stage('Deploy Image'){
+            steps {
+                sh "pwd"
+                sh "ls -a"
+                sh "docker container RUN -d -p 9898:9898 dockerapp:${env.BUILD_ID} --name spring_${env.BUILD_ID}"
             }
         }
 
