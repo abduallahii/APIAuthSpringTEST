@@ -1,21 +1,25 @@
 pipeline {
- agent none
- stages {
-   stage('Maven Install') {
-     agent {
-       docker {
-         image 'maven:3.5.0'
-       }
-     }
-     steps {
-       sh 'mvn clean install'
-     }
-   }
-   stage('Docker Build') {
-     agent any
-     steps {
-       sh 'docker build -t api_test:latest .'
-     }
-   }
- }
+    agent any
+    stages {
+        stage('Build Application') {
+            steps {
+                sh 'mvn -f pom.xml clean package'
+            }
+            post {
+                success {
+                    echo "Now Archiving the Artifacts...."
+                    archiveArtifacts artifacts: '**/*.jar'
+                }
+            }
+        }
+
+        stage('Create Tomcat Docker Image'){
+            steps {
+                sh "pwd"
+                sh "ls -a"
+                sh "docker build . -t tomcatsamplewebapp:${env.BUILD_ID}"
+            }
+        }
+
+    }
 }
