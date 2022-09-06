@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sh "pwd"
                 sh "ls -a"
-                sh "docker container run -d --name APPLICATION_SPRING --publish 9898:9898 dockerapp:${env.BUILD_ID}"
+                sh "docker container run  --detach --name APPLICATION_SPRING --publish 9898:9898 dockerapp:${env.BUILD_ID}"
             }
         }
 
