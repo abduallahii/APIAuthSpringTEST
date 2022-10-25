@@ -25,6 +25,7 @@ pipeline {
 
         stage('Pull Spring Docker Image'){
             steps {
+                script {
                 docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
                 sh "pwd"
                 sh "echo 'Pushing Image'"
@@ -33,6 +34,7 @@ pipeline {
                 sh "echo 'Removing Image'"
                 sh "docker rmi dockerapp:latest"
                  }
+                }
             }
         }
         
