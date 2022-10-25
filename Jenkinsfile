@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
+                sh 'cp /home/Configuration/application.yaml src/main/resources/'
                 sh 'mvn -f pom.xml clean package'
             }
             post {
