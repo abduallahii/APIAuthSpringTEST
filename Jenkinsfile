@@ -48,7 +48,7 @@ pipeline {
                 sh "pwd"
                 sh "ls -a"
                 sh "sudo docker pull bb1994/dockerapp"
-                sh "sudo docker container run --detach --publish 9898:9898 dockerapp"
+                sh "sudo docker container run --detach --publish 9898:9898 bb1994/dockerapp"
                 }
             }
             }
