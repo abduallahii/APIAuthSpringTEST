@@ -7,9 +7,9 @@ server:
 
 spring:
   datasource:
-    username: $DBuser
-    password: $DBPassword
-    url: jdbc:postgresql://private-db-postgresql-nyc1-97095-do-user-12610025-0.b.db.ondigitalocean.com:25060/node
+    username: *****
+    password: *****
+    url: ****
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
