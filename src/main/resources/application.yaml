@@ -8,8 +8,8 @@ server:
 spring:
   datasource:
     username: $DBuser
-    password: $DBPassword
-    url: private-db-postgresql-nyc1-97095-do-user-12610025-0.b.db.ondigitalocean.com:25060
+    password: $DBuser
+    url: jdbc:postgresql://private-db-postgresql-nyc1-97095-do-user-12610025-0.b.db.ondigitalocean.com:25060
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
