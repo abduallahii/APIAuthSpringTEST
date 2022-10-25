@@ -28,7 +28,7 @@ pipeline {
                 sh "pwd"
                 sh "echo 'Pushing Image'"
                 sh "docker tag dockerapp bb1994/dockerapp"
-                sh "docker push bb1994/dockerapp"
+                sh "sudo docker push bb1994/dockerapp"
                 sh "echo 'Removing Image'"
                 sh "docker rmi dockerapp:latest"
             }
