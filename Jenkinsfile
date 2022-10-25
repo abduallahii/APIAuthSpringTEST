@@ -43,12 +43,14 @@ pipeline {
                 timeout(time:5, unit:'DAYS'){
                     input message:'Approve PRODUCTION Deployment?'
                 }
+                script {
                 docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
                 sh "pwd"
                 sh "ls -a"
                 sh "sudo docker pull bb1994/dockerapp"
                 sh "sudo docker container run --detach --publish 9898:9898 dockerapp"
                 }
+            }
             }
         }
 
