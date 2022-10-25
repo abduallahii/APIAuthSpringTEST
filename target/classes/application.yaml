@@ -7,9 +7,9 @@ server:
 
 spring:
   datasource:
-    username: postgres
-    password: 123
-    url: jdbc:postgresql://172.18.0.2:5432/node
+    username: $DBuser
+    password: $DBPassword
+    url: $DBURL
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
