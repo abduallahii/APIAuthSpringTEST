@@ -29,10 +29,10 @@ pipeline {
                 docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
                 sh "pwd"
                 sh "echo 'Pushing Image'"
-                sh "docker tag dockerapp bb1994/dockerapp"
-                sh "docker push bb1994/dockerapp"
+                sh "sudo docker tag dockerapp bb1994/dockerapp"
+                sh "sudo docker push bb1994/dockerapp"
                 sh "echo 'Removing Image'"
-                sh "docker rmi dockerapp:latest"
+                sh "sudo docker rmi dockerapp:latest"
                  }
                 }
             }
