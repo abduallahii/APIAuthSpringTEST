@@ -18,7 +18,19 @@ pipeline {
             steps {
                 sh "pwd"
                 sh "ls -a"
-                sh "docker build . -t dockerapp:${env.BUILD_ID}"
+                sh "docker build . -t dockerapp"
+            }
+        }
+
+
+        stage('Pull Spring Docker Image'){
+            steps {
+                sh "pwd"
+                sh "echo 'Pushing Image'"
+                sh "docker tag dockerapp bb1994/dockerapp"
+                sh "docker push bb1994/dockerapp"
+                sh "echo 'Removing Image'"
+                sh "docker rmi dockerapp:latest"
             }
         }
         
