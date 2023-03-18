@@ -7,9 +7,9 @@ server:
 
 spring:
   datasource:
-    username: *****
-    password: *****
-    url: ****
+    username: ovrsamhv
+    password: 6sa5mkueOLo_KyixzboGZHHVRKAJRWOo
+    url: postgres://ovrsamhv:6sa5mkueOLo_KyixzboGZHHVRKAJRWOo@ruby.db.elephantsql.com/ovrsamhv
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
