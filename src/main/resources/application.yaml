@@ -1,15 +1,15 @@
 
 jwt:
-  secret: '********'
+  secret: ${SECRET}
 
 server:
-  port: 9898
+  port: ${TARGET_PORT}
 
 spring:
   datasource:
-    username: ovrsamhv
-    password: 6sa5mkueOLo_KyixzboGZHHVRKAJRWOo
-    url: jdbc:postgresql://ruby.db.elephantsql.com/ovrsamhv
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    url: ${DB_URL}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
